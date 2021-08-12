@@ -1,7 +1,8 @@
 import React from 'react'
-import Bodycomponant from './Bodycomponant'
 import NavBard from './NavBard'
 import './mobile.css'
+import Topsection from './Topsection'
+
 export default function Mainpage() {
     return (
         <div>
@@ -10,8 +11,15 @@ export default function Mainpage() {
                         <NavBard></NavBard>
                     </header>
                     <main className="shell-body">
-                        <h2>Page body</h2>  
+                      <Topsection/>
                     </main>
+                    {/* <main class="shell-body2">
+                        <h2>hello</h2>
+                    </main>
+
+                    <main  class="shell-body3">
+                        <h2>hello</h2>
+                    </main> */}
             </div>
         </div>
     )
