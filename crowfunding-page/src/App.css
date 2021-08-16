@@ -1,13 +1,23 @@
 
 
+:root{
+  --main-bkmarkbgcolor:  #2F2F2F;
+  --main-fill: #B1B1B1;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+body {
+  margin:0;
+  font-family: 'Commissioner' !important;
+  background-color:  hsl(0, 0%, 98%) !important;
+}
+
 .Main-shell{
   display: grid;
   grid-template-columns: 5% 1fr 5%  ;
   grid-template-rows: auto 18em 1fr auto;
 }
-
 
 /* overlap */
 .Main-shell:before {
@@ -15,7 +25,7 @@
   grid-column: 1/-1;
   grid-row: 1/3;
   background: url(./images/image-hero-mobile.jpg) no-repeat;
-    background-size: 100% 100%;
+  background-size: 100% 100%;
 
 }
 
@@ -52,19 +62,26 @@
   background-color: #FFF;
   margin-top: 200px;
   text-align: center;
+
 }
+
+
 .shell-body h1{
   font-size: 1.7rem;
   font-weight: 700;
   margin-top: 30px;
 }
+
 .topsection{
   transform: translateY(-50px);
 }
 
+
+
 .shell-body p{
   color:   hsl(0, 0%, 48%);
   margin-top:20px;
+  
 }
 .shell-footer {
   grid-column: 2/3;
@@ -72,42 +89,18 @@
   padding: 20px; 
 }
 
-body {
-  margin:0;
-  font-family: 'Commissioner' !important;
-}
-/* navbar */
 
+
+/* navbar */
 #lastNav{
   border: 0;
-}
-.shell-body2 {
-  grid-row: 3 / 4;
-  grid-column: 2 / 3; 
-  min-height: 50vh;
-  padding: 50px 50px 10px 50px;
-  border-radius: 10px;
-  box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.25);
-  background-color: #FFF;
-  margin-top: 250px;
-}
-
-
-.shell-body3 {
-  grid-row: 4 / 4;
-  grid-column: 2 / 3; 
-  min-height: 50vh;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.25);
-  background-color: #FFF;
 }
 
 
 /* bookmark btn */
 
 #bookmark{
-    background-color: hsl(0, 0%, 97%) ;
+  background-color: hsl(0, 0%, 97%) ;
     border: 0;
     outline: 0;
     border-radius: 50px;
@@ -117,43 +110,97 @@ body {
     height: 50px;
     box-shadow: none;
   }
-
-
-
-
-/* bookmarkbtn */
-.MuiButton-startIcon{
-  background-color:var(--main-bkmarkbgcolor);
-  width: 56px;
-  height: 56px;
-  border-radius: 50px;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.mobilebkmark{
-  display: flex;
+  
+  
+  
+  
+  /* bookmarkbtn */
+  .MuiButton-startIcon{
     background-color:var(--main-bkmarkbgcolor);
-  width: 56px;
-  height: 56px;
-  border-radius: 50px;
-  justify-content: center;
-  align-items: center;
-}
-
-
-path{
-  color:var(--main-fill);
-}
-
-@media (min-width: 900px) {
-  .mobilebkmark{
-    display: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
   }
-}
+  
+  
+  .mobilebkmark{
+    display: flex;
+    background-color:var(--main-bkmarkbgcolor);
+    width: 56px;
+    height: 56px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  path{
+    color:var(--main-fill);
+  }
+  
+  @media (min-width: 900px) {
+    .mobilebkmark{
+      display: none;
+    }
+  }
+  
+  
+  
+  
+  /* sections 2 */
+  
+  .shell-body2 {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3; 
+    height: max-content;
+    padding: 50px 50px 10px 50px;
+    border-radius: 10px;
+    box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.25);
+    background-color: #FFF;
+    margin-top: 200px;
+  }
+    
+    
+    /* progressbar */
+    
+  .MuiLinearProgress-bar{
+    border-radius: 50px;
+    background-color:  hsl(176, 50%, 47%) !important;
+  }
 
-:root{
-  --main-bkmarkbgcolor:  #2F2F2F;
-  --main-fill: #B1B1B1;
-}
+
+  .MuiDivider-vertical{
+    background-color: green !important;
+  }
+
+  /* mobile */
+      @media (max-width: 600px) {
+        .shell-body2 {
+              margin-top: 300px;
+
+        },
+
+        /* topsection */
+
+        .shell-body p{
+          font-size: 3vw;
+        }
+      }
+      
+
+
+
+
+
+  
+  .shell-body3 {
+    grid-row: 4 / 4;
+    grid-column: 2 / 3; 
+    min-height: 50vh;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.25);
+    background-color: #FFF;
+  }
