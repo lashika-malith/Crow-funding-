@@ -1,8 +1,6 @@
 import React from 'react'
 import logo from './images/logo.svg'
 import { makeStyles } from '@material-ui/core/styles';
-import navimg_1 from './images/icon-hamburger.svg'
-    
 const navbarStyle =makeStyles((theme)=>({
 Main:{
     display: 'flex',
@@ -42,7 +40,7 @@ dropdown:{
     color: 'black',
     position: 'absolute',
     right: '10%',
-    top: '30%',
+    top: '17%',
     WebkitBoxShadow: '10px 3px 300px 99px rgba(0,0,0,0.56)',
     MozBoxShadow: '10px 3px 300px 99px rgba(0,0,0,0.56)',
     boxShadow: '10px 3px 300px 99px rgba(0,0,0,0.56)',
@@ -74,7 +72,6 @@ link:{
 
 export default function NavBard() {
     const navstyle = navbarStyle()
-
     
     //dropdown functions
         //drop down Icon change.
@@ -83,7 +80,7 @@ export default function NavBard() {
            crossmark: "/static/media/icon-close-menu.32169d31.svg"
         }
 
-    console.log(navimg_1)
+  
 
     const [press, setPress] = React.useState(false);
     const [state, setState] = React.useState({

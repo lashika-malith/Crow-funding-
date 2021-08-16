@@ -1,7 +1,10 @@
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
 .Main-shell{
   display: grid;
-  grid-template-columns: 0 1fr 0;
+  grid-template-columns: 5% 1fr 5%  ;
   grid-template-rows: auto 18em 1fr auto;
 }
 
@@ -11,8 +14,9 @@
   content: "";
   grid-column: 1/-1;
   grid-row: 1/3;
-  background: url(./images/image-hero-desktop.jpg) no-repeat;
-  background-size: 100% 100%;
+  background: url(./images/image-hero-mobile.jpg) no-repeat;
+    background-size: 100% 100%;
+
 }
 
 .Shell-header {
@@ -26,7 +30,14 @@
     .Main-shell {
         grid-template-columns: 30% 1fr 30%  ;
     }
+    .Main-shell:before{
+        content: "";
+        grid-column: 1/-1;
+        grid-row: 1/3;
+        background: url(./images/image-hero-desktop.jpg) no-repeat;
+        background-size: 100% 100%;
 
+    }
     
 }
 
@@ -35,7 +46,7 @@
   grid-row: 2 / 2;
   grid-column: 2 / 3; 
   height: max-content;
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
   border-radius: 10px;
   box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.25);
   background-color: #FFF;
@@ -63,7 +74,7 @@
 
 body {
   margin:0;
-  font-family: 'Commissioner';
+  font-family: 'Commissioner' !important;
 }
 /* navbar */
 
@@ -74,11 +85,14 @@ body {
   grid-row: 3 / 4;
   grid-column: 2 / 3; 
   min-height: 50vh;
-  padding: 20px;
+  padding: 50px 50px 10px 50px;
   border-radius: 10px;
   box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.25);
   background-color: #FFF;
+  margin-top: 250px;
 }
+
+
 .shell-body3 {
   grid-row: 4 / 4;
   grid-column: 2 / 3; 
@@ -104,15 +118,42 @@ body {
     box-shadow: none;
   }
 
-#bookmark:before{
- content: url('./images/icon-bookmark.svg');
- transform: translateY(4px);
 
+
+
+/* bookmarkbtn */
+.MuiButton-startIcon{
+  background-color:var(--main-bkmarkbgcolor);
+  width: 56px;
+  height: 56px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
 }
+
+
+.mobilebkmark{
+  display: flex;
+    background-color:var(--main-bkmarkbgcolor);
+  width: 56px;
+  height: 56px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+
 path{
-  fill: red
+  color:var(--main-fill);
 }
 
-@media (max-width: 600px) {
+@media (min-width: 900px) {
+  .mobilebkmark{
+    display: none;
+  }
+}
 
+:root{
+  --main-bkmarkbgcolor:  #2F2F2F;
+  --main-fill: #B1B1B1;
 }

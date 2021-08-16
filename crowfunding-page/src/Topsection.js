@@ -2,6 +2,9 @@ import React from 'react'
 import Logotop from './images/logo-mastercraft.svg'
 import { Button, makeStyles} from '@material-ui/core';
 import bookmark from './images/icon-bookmark.svg'
+import { BsFillBookmarkFill } from "react-icons/bs";
+
+
 const useStyle = makeStyles({
     tpbtn:{
         backgroundColor: 'hsl(176, 50%, 47%)',
@@ -33,8 +36,10 @@ const useStyle = makeStyles({
         color: 'hsl(176, 50%, 47%) !important',
     },
 
-    bkmark:{
- 
+    bkbtn:{
+      '@media(max-width:900px)':{
+            display: 'none !important',
+        }   
     }
     
 })
@@ -47,11 +52,31 @@ export default function Topsection() {
     
     const [press, setPress] = React.useState(false);
 
-    const toggleBookmark =(e) =>{
-        setPress(!press);
+    const [r, setR] = React.useState(document.querySelector(':root'))
+
+    
+    function  toggleBookmark(params) {
+        setPress(!press)
+        if(press === false) {
+                r.style.setProperty(  '--main-bkmarkbgcolor',  'hsl(176, 50%, 47%)')
+                r.style.setProperty('--main-fill', 'white')
+        }
+        if (press === true) {
+            r.style.setProperty(  '--main-bkmarkbgcolor',  '#2F2F2F')
+            r.style.setProperty('--main-fill', ' #B1B1B1')
+
+        }
+        
     }
     
-    const mark = "Bookmark"
+
+    
+    const tittle = !press ? "bookmark":"bookmarked"
+
+
+    console.log(tittle)
+
+
     return (
         <div class="topsection">
             <img src={Logotop}></img>
@@ -59,9 +84,22 @@ export default function Topsection() {
 
             <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
             <div class={style.btnset}>
+              
                 <Button className={style.tpbtn} variant="contained">Back this project</Button>
-                <Button onClick={toggleBookmark} id="bookmark" className={`${style.tpbtn} ${style.bkmark} `} variant="contained"><span className={`${style.bookmark} ${press ? style.togglebookmark:null}`}>{mark}</span></Button>
-
+                <div>
+                <Button 
+                onClick={toggleBookmark} 
+                id="bookmark" 
+                className={`${style.bkbtn} ${style.tpbtn} ${style.bkmark}`}
+                startIcon={<BsFillBookmarkFill/>}
+                variant="contained"
+                >
+                <span className={`${style.bookmark} ${press ? style.togglebookmark:null}`}>{tittle}</span>
+                </Button>
+                <div  class='mobilebkmark'>
+                <BsFillBookmarkFill onClick={toggleBookmark} cursor='pointer' size={20} class="iconbk"/>
+                </div>
+                </div>
             </div>
         </div>
     )

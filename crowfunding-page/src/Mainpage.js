@@ -2,6 +2,7 @@ import React from 'react'
 import NavBard from './NavBard'
 import './mobile.css'
 import Topsection from './Topsection'
+import Secsecion from './Secsecion'
 
 export default function Mainpage() {
     return (
@@ -13,10 +14,11 @@ export default function Mainpage() {
                     <main className="shell-body">
                       <Topsection/>
                     </main>
-                    {/* <main class="shell-body2">
-                        <h2>hello</h2>
-                    </main>
 
+                    <main class="shell-body2">
+                        <Secsecion/>
+                    </main>
+{/* 
                     <main  class="shell-body3">
                         <h2>hello</h2>
                     </main> */}
