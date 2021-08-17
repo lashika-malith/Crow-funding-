@@ -1,6 +1,11 @@
 import React from 'react'
 import logo from './images/logo.svg'
 import { makeStyles } from '@material-ui/core/styles';
+import {TiThMenu} from 'react-icons/ti';
+import { GrClose } from "react-icons/gr";
+import {RiCloseLine} from 'react-icons/ri'
+import { useEffect } from 'react';
+
 const navbarStyle =makeStyles((theme)=>({
 Main:{
     display: 'flex',
@@ -47,8 +52,8 @@ dropdown:{
     borderRadius: '10px',
     width: '80vw',
     textAlign: 'left',
-    
     padding: '0',
+    zIndex: '2'
 
 },
 
@@ -66,6 +71,19 @@ link:{
     
 },
 
+navsvg:{
+    '& > path':{
+        stroke: 'white',
+        fill: 'white',
+    },
+    transitionDuration : '2s'
+},
+crossmark:{
+    '& > path':{
+        strokeWidth: '5px'
+    }
+}
+
 
 }))
 
@@ -76,8 +94,8 @@ export default function NavBard() {
     //dropdown functions
         //drop down Icon change.
         const img = {
-           humburg: "/static/media/icon-hamburger.f8a9f0cf.svg",
-           crossmark: "/static/media/icon-close-menu.32169d31.svg"
+            humburg:  <TiThMenu  className={navstyle.navsvg}/>,
+           crossmark: <GrClose className={`${navstyle.navsvg} ${navstyle.crossmark}`}/>
         }
 
   
@@ -90,11 +108,14 @@ export default function NavBard() {
     const toggleclass =(e) =>{
         setPress(!press);
         setState(state =>({open: !state.open}))
+      
     }
 
-    const getImageName = () => state.open ? 'humburg' : 'crossmark'
+
+ 
+    const getImageName = () => ( state.open ? 'humburg' : 'crossmark')
     const imageName = getImageName();
-    
+        
     return(
         <div>
             <nav className={navstyle.Main}>
@@ -111,7 +132,7 @@ export default function NavBard() {
                     </ul>
                 </div>
            
-                <a href='void:0' onClick={toggleclass} className={navstyle.navIcon}><img src={img[imageName]}></img></a>
+                <a href='void:0' onClick={toggleclass} className={navstyle.navIcon}>{img[imageName]}</a>
             </nav>
         </div>
     )

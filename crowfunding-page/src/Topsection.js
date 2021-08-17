@@ -97,7 +97,7 @@ export default function Topsection() {
                 <span className={`${style.bookmark} ${press ? style.togglebookmark:null}`}>{tittle}</span>
                 </Button>
                 <div  class='mobilebkmark'>
-                <BsFillBookmarkFill onClick={toggleBookmark} cursor='pointer' size={20} class="iconbk"/>
+                <BsFillBookmarkFill onClick={toggleBookmark} cursor='pointer' size={20} class="iconbk" />
                 </div>
                 </div>
             </div>
