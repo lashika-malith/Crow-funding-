@@ -3,6 +3,7 @@ import NavBard from './NavBard'
 import './mobile.css'
 import Topsection from './Topsection'
 import Secsecion from './Secsecion'
+import Thirdsec from './Thirdsec'
 
 export default function Mainpage() {
     return (
@@ -18,10 +19,10 @@ export default function Mainpage() {
                     <main class="shell-body2">
                         <Secsecion/>
                     </main>
-{/* 
+
                     <main  class="shell-body3">
-                        <h2>hello</h2>
-                    </main> */}
+                        <Thirdsec/>
+                    </main>
             </div>
         </div>
     )

@@ -16,7 +16,7 @@ const useStyle = makeStyles({
         textTransform: 'none',
         float: 'left',
         '&:hover':{
-            backgroundColor: ' hsl(176, 72%, 28%)',
+            backgroundColor: 'hsl(176, 72%, 28%)',
         }
     },
     bookmark:{
