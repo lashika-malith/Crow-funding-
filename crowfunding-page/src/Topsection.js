@@ -45,7 +45,7 @@ const useStyle = makeStyles({
 })
 
 
-export default function Topsection() {
+export default function Topsection(props) {
     const style = useStyle()
 
     const [selected, setSelected] = React.useState(false);
@@ -73,8 +73,13 @@ export default function Topsection() {
     
     const tittle = !press ? "bookmark":"bookmarked"
 
+    const [openMod, setopenMod] = React.useState(true)
+    function openModule(para) { 
+        setopenMod(!openMod)
+        props.callBack(openMod)
+    }
 
-    console.log(tittle)
+
 
 
     return (
@@ -85,7 +90,7 @@ export default function Topsection() {
             <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
             <div class={style.btnset}>
               
-                <Button className={style.tpbtn} variant="contained">Back this project</Button>
+                <Button onClick={openModule} className={style.tpbtn} variant="contained">Back this project</Button>
                 <div>
                 <Button 
                 onClick={toggleBookmark} 

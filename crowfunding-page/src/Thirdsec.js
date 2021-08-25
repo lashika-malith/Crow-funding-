@@ -1,5 +1,6 @@
 import { makeStyles, Button } from '@material-ui/core'
 import React from 'react'
+import Model from './Model'
 
 
  const useStyle = makeStyles({
@@ -93,12 +94,23 @@ import React from 'react'
 
 
 
-export default function Thirdsec() {
+export default function Thirdsec(e) {
     const style = useStyle()
 
 
+    function BambboStand(params) {
+        const clickOne = (params)
+        e.callBackone(clickOne)
+    }
+    
+    function Blackedtion(params) {
+        const clickTwo = (params)
+        e.callBacktwo(clickTwo)
+    }
     return (
         <div>
+            <div>
+            </div>
             <div className={style.para}>
 
                 <h4 style={{fontSize: '1.6em'}}>  About this project</h4>
@@ -123,8 +135,10 @@ export default function Thirdsec() {
                         Identiy="Pledge $25 or more"    
                         para=" You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
                                 you’ll be added to a special Backer member list."
-                        count="101"  
-                        BtnTittle="Select Reward"      
+                        count ="101"  
+                        BtnTittle ="Select Reward" 
+                        number ={1}
+                        callBack={BambboStand}  
                     />
                 </div>
 
@@ -135,6 +149,8 @@ export default function Thirdsec() {
                         para="You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list."
                         count = "64"
                         BtnTittle= "Select Reward"
+                        number ={2}
+                        callBack={Blackedtion} 
                     />
                 </div>
 
@@ -147,6 +163,7 @@ export default function Thirdsec() {
                         BtnTittle="Out of Stock"
                         Type ="True"
                         styles={{opacity: '0.5'}}
+                        number ={3}
                     />
                 </div>
             </div>
@@ -157,8 +174,12 @@ export default function Thirdsec() {
 
  function Models(props) {
      const style = useStyle()
-
+    const [selectsection, setselectsection] = React.useState(true)
+    function openModule() {
+        setselectsection(!selectsection)
     
+        props.callBack(selectsection)
+    }
     return   (
         <div style={props.styles} className={style.selectBox}>
             <div className={style.Topheader}>
@@ -173,11 +194,12 @@ export default function Thirdsec() {
             <div className={style.botSection}>
 
                 <p><span>{props.count}</span>       left</p>           
-                <Button className={style.btn}  variant="contained" disabled={props.Type}> 
+                <Button  onClick={openModule} className={style.btn}  variant="contained" disabled={props.Type}> 
                     {props.BtnTittle}
                 </Button> 
-
             </div>
         </div>
     )
 }
+
+
